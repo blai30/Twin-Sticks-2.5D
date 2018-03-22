@@ -8,13 +8,13 @@ public class Player : MonoBehaviour {
 	public bool isGrabbing = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (CrossPlatformInputManager.GetButton ("Fire3")) {
+	void Update() {
+		if (CrossPlatformInputManager.GetButton("Fire3")) {
 			tryingToGrab = true;
 		} else {
 			tryingToGrab = false;
@@ -22,8 +22,8 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter (Collision collision) {
-		print (collision.gameObject.tag);
+	void OnCollisionEnter(Collision collision) {
+		print(collision.gameObject.tag);
 		if (tryingToGrab && collision.gameObject.tag == "Grabbable") {
 			isGrabbing = true;
 		}
