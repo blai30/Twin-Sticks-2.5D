@@ -19,6 +19,9 @@ public class ReplaySystem : MonoBehaviour {
     void PlayBack() {
         rigidBody.isKinematic = true;
         int frame = Time.frameCount % bufferFrames;
+        print("Reading frame " + frame);
+        transform.position = keyFrames[frame].position;
+        transform.rotation = keyFrames[frame].rotation;
     }
 
     void Record() {
